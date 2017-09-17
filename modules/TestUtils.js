@@ -69,7 +69,7 @@ export const functionThrows = (fn, context, args, value) => {
     const message = error.message || error
 
     if (typeof message === 'string') {
-      if (isRegExp(value) && value.test(error.message))
+      if (isRegExp(value) && value.test(message))
         return true
 
       if (typeof value === 'string' && message.indexOf(value) !== -1)
